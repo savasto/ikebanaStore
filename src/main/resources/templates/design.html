@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ikebana flower shop</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<h1>Design your ikebana!</h1>
+<img th:src="@{/images/ikebanahome.png}"/>
+<form method="POST" th:object="${bouquet}">
+    <div class="grid">
+        <div class="product-group" id="fresh flowers">
+            <h3>Add your fresh flower:</h3>
+            <div th:each="product : ${freshflower}">
+                <input th:field="*{products}" type="checkbox"
+                       th:value="${product.id}"/>
+                <span th:text="${product.name}">PRODUCT</span><br/>
+            </div>
+        </div>
+        <div class="product-group" id="dried flowers">
+            <h3>Pick your dried flower or leaf:</h3>
+            <div th:each="product : ${driedflower}">
+                <input th:field="*{products}" type="checkbox"
+                       th:value="${product.id}"/>
+                <span th:text="${product.name}">PRODUCT</span><br/>
+            </div>
+        </div>
+        <div class="product-group" id="plants">
+            <h3>Choose your plant:</h3>
+            <div th:each="product : ${plant}">
+                <input th:field="*{products}" type="checkbox"
+                       th:value="${product.id}"/>
+                <span th:text="${product.name}">PRODUCT</span><br/>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3>Name your ikebana creation:</h3>
+        <input type="text" th:field="*{name}"/>
+<br/>
+        <button>Submit Your Ikebana</button>
+    </div>
+</form>
+</body>
+</html>
