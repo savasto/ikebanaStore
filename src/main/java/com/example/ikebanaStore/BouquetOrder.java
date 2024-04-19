@@ -9,6 +9,7 @@ import java.util.List;
 public class BouquetOrder {
     private String deliveryName;
     private String deliveryStreet;
+    private String deliveryCity;
     private String deliveryZip;
     private String ccNumber;
     private String ccExpiration;
