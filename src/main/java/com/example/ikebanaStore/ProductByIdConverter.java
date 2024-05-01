@@ -1,5 +1,6 @@
 package com.example.ikebanaStore;
 
+import com.example.ikebanaStore.Model.Product;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 

@@ -1,5 +1,7 @@
-package com.example.ikebanaStore;
+package com.example.ikebanaStore.Controller;
 
+import com.example.ikebanaStore.Model.Bouquet;
+import com.example.ikebanaStore.Model.Product;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
