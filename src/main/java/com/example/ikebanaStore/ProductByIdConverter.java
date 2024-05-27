@@ -1,12 +1,5 @@
 package com.example.ikebanaStore;
 
-import com.example.ikebanaStore.Model.Product;
-import org.springframework.core.convert.converter.Converter;
-import org.springframework.stereotype.Component;
-
-import java.util.HashMap;
-import java.util.Map;
-
 //A converter is any class that implements Spring’s
 //Converter convert() interface and implements its method to take one value and convert it to
 //another. To convert a String to an Product weĺl use the ProductByIdConverter
@@ -14,7 +7,7 @@ import java.util.Map;
 //is annotated with to make it IngredientByIdConverter @Component
 //discoverable as a bean in the Spring application context. Spring Boot autoconfiguration will
 //discover this, and any other beans, and will automatically register them with Spring Converter
-//MVC to be used when conversion of request parameters to bound properties is needed.
+/*//MVC to be used when conversion of request parameters to bound properties is needed.
 @Component
 public class ProductByIdConverter implements Converter<String, Product> {
     private Map<String, Product> productMap = new HashMap<>();
@@ -44,4 +37,4 @@ public class ProductByIdConverter implements Converter<String, Product> {
 public Product convert(String id){
         return productMap.get(id);
     }
-}
+}*/
