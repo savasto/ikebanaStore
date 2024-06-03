@@ -24,21 +24,23 @@ public class Customer {
     private String password;
     private String initDate;
 
-    @OneToMany( mappedBy = "customer", cascade = CascadeType.ALL)
-    private List<Order> orders= new ArrayList<>();
+    //each customer has many orders
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Order> orders;
+}
+//    public void addOrder(Order order) {
+//        this.getOrders().add(order);
+//        order.setCustomer(this);
+//    }
 
-    public void addOrder (Order order){
-        this.getOrders().add(order);
-        order.setCustomer(this);
-    }
+
+//    //each customer has only one cart
 //    @OneToOne(mappedBy= "customer", cascade = CascadeType.ALL)
 //    private Cart cart;
 //
-//    public void addCart(Cart cart){
-//        this.cart=cart;
-//        if (cart!=null){
-//            cart.setCustomer(this);
-//        }
+//    public void addCart (Cart cart){
+//        this.getCart();
+//        cart.setCustomer(this);
 //    }
 
-}
+

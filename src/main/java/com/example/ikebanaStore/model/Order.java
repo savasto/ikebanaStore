@@ -20,15 +20,16 @@ import java.util.List;
 public class Order {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    //many orders have one customer
     @JsonIgnore
-    @ManyToOne (fetch = FetchType.LAZY)
-    @JoinColumn(name="CUSTOMER_FK")
+    @ManyToOne (targetEntity=Customer.class, fetch = FetchType.LAZY)
+    @JoinColumn(name="CUSTOMER_FK", nullable= false)
     private Customer customer;
 
     private String createdAt;
-
     //@NotBlank (message="Delivery Name is required")
     private String deliveryName;
     //@NotBlank (message="Street is required")
@@ -48,16 +49,9 @@ public class Order {
     //@Digits(integer=3, fraction=0, message="Invalid CVV")
     private int ccCVV;
 
-//    @OneToMany (mappedBy = "order", cascade =CascadeType.ALL)
-//    private List<OrderItem> orderItems = new ArrayList<>();
-//
-//    public void addOrderItem (OrderItem orderItem){
-//        this.getOrderItems().add(orderItem);
-//        orderItem.setOrder(this);
-//    }
-
-
-
+    //each order has many items in an order
+    @OneToMany (mappedBy ="order", cascade = CascadeType.ALL)
+    private List<OrderItem> items;
 
 }
 

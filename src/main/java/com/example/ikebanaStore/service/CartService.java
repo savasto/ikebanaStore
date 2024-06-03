@@ -1,9 +1,12 @@
-//package Service;
+
+//package com.example.ikebanaStore.service;
 //
-//import com.example.ikebanaStore.Model.Cart;
-//import com.example.ikebanaStore.Model.Product;
-//import com.example.ikebanaStore.Repository.CartRepository;
-//import com.example.ikebanaStore.Repository.ProductRepository;
+//
+//import com.example.ikebanaStore.model.Cart;
+//import com.example.ikebanaStore.model.Product;
+//import com.example.ikebanaStore.repository.CartRepository;
+//import com.example.ikebanaStore.repository.ProductRepository;
+//import com.example.ikebanaStore.service.ProductService;
 //import com.github.javafaker.Faker;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Repository;
@@ -17,10 +20,12 @@
 //public class CartService {
 //    @Autowired
 //    private CartRepository cartRepository;
-//
+//    @Autowired
 //    private ProductService productService;
-//
+//    @Autowired
 //    private ProductRepository productRepository;
+//
+//
 //
 //    public void populate(){
 //        Faker faker =new Faker(new Locale("en-Gb"));
@@ -40,8 +45,10 @@
 //
 //            for (int j=0; j<10; j++){
 //                cart.addProduct(products.get(j));
+//
 //            }
 //            cartRepository.save(cart);
 //        }
+//
 //    }
 //}

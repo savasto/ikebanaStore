@@ -1,7 +1,9 @@
-//package com.example.ikebanaStore.Repository;
+//package com.example.ikebanaStore.repository;
 //
-//import com.example.ikebanaStore.Model.Cart;
+//import com.example.ikebanaStore.model.Cart;
 //import org.springframework.data.repository.CrudRepository;
+//import org.springframework.stereotype.Repository;
 //
-//public interface CartRepository extends CrudRepository<Cart, String> {
+//@Repository
+//public interface CartRepository extends CrudRepository <Cart, String> {
 //}

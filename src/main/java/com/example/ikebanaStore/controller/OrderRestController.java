@@ -18,6 +18,7 @@ public class OrderRestController {
     OrderRepository orderRepository;
 
     //CRUD READ
+    @RequestMapping("/orders")
     public Iterable<Order> getAllOrders(){
         return orderRepository.findAll();
     }
@@ -54,9 +55,6 @@ public class OrderRestController {
             return response;
         } else return "id: " +id +"not found " +"count: " + countBefore;
     }
-        public String populateOrderDB(){
-            orderService.populate();
-            return "ok";
-        }
+
     }
 

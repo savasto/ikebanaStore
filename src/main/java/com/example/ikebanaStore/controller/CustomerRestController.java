@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@RequestMapping ("/api/v1/customer")
+@RequestMapping ("api/v1/customer/")
 public class CustomerRestController {
     @Autowired
     CustomerRepository customerRepository;
@@ -17,6 +17,7 @@ public class CustomerRestController {
     CustomerService customerService;
 
     //CRUD GET
+    @RequestMapping("/customers")
     public Iterable<Customer> getAllCustomers(){
         return customerRepository.findAll();
     }
@@ -52,8 +53,5 @@ public class CustomerRestController {
             return response;
         } else return "id: " +id +"not found " +"count: " + countBefore;
     }
-    public String populateCustomerDB(){
-        customerService.populate();
-        return "ok";
-    }
+
 }
